@@ -1,8 +1,9 @@
  
-/*options { menu_name:"A Menu", btnColor:"#CCCCCC", hoverColor:"#CCCEED", focusedObjectColor:"#CC0CCC" }*/
-var CanvasPlayer = function(canvas,options){
+/*options {elemen_id:"CanvasPlayer", btnColor:"#CCCCCC", hoverColor:"#CCCEED", focusedObjectColor:"#CC0CCC" }*/
+var CanvasPlayer = function(options){
     
     
+    var canvas = document.getElementById("CanvasPlayer");
     this.canvas = canvas;
     this.width = canvas.width;
     this.height = canvas.height;
@@ -26,8 +27,6 @@ var CanvasPlayer = function(canvas,options){
     var html = document.body.parentNode;
     this.htmlTop = html.offsetTop;
     this.htmlLeft = html.offsetLeft;
-
-
 
     //keep track of state
     this.valid = false;
@@ -88,21 +87,14 @@ var CanvasPlayer = function(canvas,options){
                 
             }
 
-
         }
-
-        
-        
-
-
-
 
     },true);
 
-    /*Menu Options*/
-    this.menu_name = options.menu_name || "A Menu";
-    this.btnColor = options.btnColor || "#CCCCCC";
-    this.hoverColor = options.hoverColor || "#CCCEED";
+    /*Player Options*/
+    this.loader_name = "root";
+    this.bgColor = options.bgColor || "#FFFFFF";
+    /*this.hoverColor = options.hoverColor || "#CCCEED";*/
     this.focusedObjectColor = options.focusedObjectColor || "#CC0CCC";
     
     this.interval = 3;

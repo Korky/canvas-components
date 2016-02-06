@@ -1,8 +1,4 @@
-var canvas = document.getElementById("canvas_1");
-var ctx = canvas.getContext("2d");
-
-var menu = new CanvasPlayer(canvas,{});
-
+var menu = new CanvasPlayer({bgColor:"#cccccc"});
 menu.addObject( new CanvasButton(10,60,25,{btn_name:"btn1"}) );
 menu.addObject( new CanvasButton(90,15,25,{btn_name:"btn2"}) );
 menu.addObject( new CanvasButton(10,152.5,25,{btn_name:"btn3"}) );

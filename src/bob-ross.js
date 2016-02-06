@@ -1,10 +1,9 @@
 /*BobRoss is the internal base object for CanvasPlayer .. this next phrase defines the entire ideology of the design of this project "everybody inherits from BobRoss" */
 var BobRoss = {
   
-    x:0,
-    y:0,
+    position:{x:0,y:0},
     type:"BobRoss Object",
-    name:"",
+    name:"display",
     points:[],
     fillColor:"#000000",
     draw:function(ctx){
@@ -17,7 +16,13 @@ var BobRoss = {
         canvas_context.closePath();
         canvas_context.fill();
     },
-    handleEvent:function(eventType,input){},
+    handleEvent:function(eventType,input){
+        switch(eventType){
+                case 'MouseEvent':
+                    if(this.containsPoint(intput)) return true;
+                break;     
+        }
+    },
     containsPoint:function(pb){
         var p = this.points;
         var n = p.length;
@@ -52,8 +57,5 @@ var BobRoss = {
         }
         //console.log(depth);
         return (depth & 1) == 1;    
-    
     }
-    
-
 };
